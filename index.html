@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Danh sách sản phẩm</title>
+  <title>Lịch họp công ty</title>
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
@@ -15,61 +15,94 @@
     }
     table {
       width: 100%;
-      max-width: 700px;
+      max-width: 800px;
       margin: 0 auto;
       border-collapse: collapse;
     }
     th, td {
       border: 1px solid #999;
       padding: 10px 14px;
+      text-align: center;
     }
     th {
       background-color: #1565c0;
       color: #fff;
     }
-    td:nth-child(2),
-    td:nth-child(3) {
-      text-align: right;
+    td.date {
+      background-color: #e3f2fd;
+      font-weight: bold;
     }
-    tr:nth-child(even) {
-      background-color: #f2f6fa;
+    td.content {
+      text-align: left;
+    }
+    td.allday {
+      background-color: #fff3e0;
+      font-weight: bold;
+    }
+    td.note {
+      background-color: #f5f5f5;
+      font-style: italic;
+      text-align: left;
     }
   </style>
 </head>
 <body>
 
-  <h1>Danh sách sản phẩm</h1>
+  <h1>Lịch họp công ty</h1>
 
   <table>
     <tr>
-      <th>Tên sản phẩm</th>
-      <th>Giá</th>
-      <th>Số lượng</th>
+      <th>Ngày</th>
+      <th>Giờ</th>
+      <th>Nội dung cuộc họp</th>
+    </tr>
+
+    <!-- Thứ Ba: 3 cuộc họp -> rowspan="3" -->
+    <tr>
+      <td class="date" rowspan="3">Thứ Ba<br>06/10/2026</td>
+      <td>08:00 - 09:00</td>
+      <td class="content">Họp giao ban đầu tuần</td>
     </tr>
     <tr>
-      <td>Laptop Dell Inspiron</td>
-      <td>15.000.000 đ</td>
-      <td>10</td>
+      <td>09:30 - 11:00</td>
+      <td class="content">Họp kế hoạch kinh doanh quý IV</td>
     </tr>
     <tr>
-      <td>Điện thoại Samsung Galaxy</td>
-      <td>12.500.000 đ</td>
-      <td>25</td>
+      <td>14:00 - 16:00</td>
+      <td class="content">Họp với khách hàng đối tác</td>
+    </tr>
+
+    <!-- Thứ Tư: 2 cuộc họp -> rowspan="2" -->
+    <tr>
+      <td class="date" rowspan="2">Thứ Tư<br>07/10/2026</td>
+      <td>08:30 - 10:00</td>
+      <td class="content">Đào tạo kỹ năng cho nhân viên mới</td>
     </tr>
     <tr>
-      <td>Tai nghe Bluetooth</td>
-      <td>850.000 đ</td>
-      <td>50</td>
+      <td>13:30 - 15:00</td>
+      <td class="content">Họp báo cáo tiến độ dự án</td>
+    </tr>
+
+    <!-- Thứ Năm: sự kiện cả ngày -> colspan="2" gộp cột Giờ và Nội dung -->
+    <tr>
+      <td class="date">Thứ Năm<br>08/10/2026</td>
+      <td class="allday" colspan="2">Cả ngày (08:00 - 17:00): Hội thảo chuyển đổi số toàn công ty</td>
+    </tr>
+
+    <!-- Thứ Sáu: 2 cuộc họp -> rowspan="2" -->
+    <tr>
+      <td class="date" rowspan="2">Thứ Sáu<br>09/10/2026</td>
+      <td>09:00 - 11:00</td>
+      <td class="content">Họp đánh giá hiệu quả làm việc</td>
     </tr>
     <tr>
-      <td>Chuột không dây</td>
-      <td>250.000 đ</td>
-      <td>80</td>
+      <td>15:00 - 17:00</td>
+      <td class="content">Tổng kết tuần và phân công công việc</td>
     </tr>
+
+    <!-- Hàng ghi chú -> colspan="3" gộp cả 3 cột -->
     <tr>
-      <td>Bàn phím cơ</td>
-      <td>1.200.000 đ</td>
-      <td>30</td>
+      <td class="note" colspan="3">Ghi chú: Các cuộc họp diễn ra tại phòng họp tầng 3. Vui lòng có mặt trước 5 phút.</td>
     </tr>
   </table>
 
