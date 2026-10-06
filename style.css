@@ -1,0 +1,95 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: #1565c0;
+}
+
+h2 {
+  color: #1565c0;
+  border-bottom: 2px solid #e3f2fd;
+  padding-bottom: 5px;
+  margin-top: 35px;
+}
+
+/* Phần 2: list-style-type */
+.square-list {
+  list-style-type: square;
+}
+
+/* Phần 3: số La Mã viết hoa */
+.roman-list {
+  list-style-type: upper-roman;
+}
+
+/* Phần 4: list-style-image
+   Dùng hình SVG nhỏ nhúng sẵn (data URI) nên không cần file ảnh riêng.
+   Nếu muốn dùng ảnh của bạn, thay bằng: url("icon.png") */
+.image-list {
+  list-style-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14'><circle cx='7' cy='7' r='6' fill='%231565c0'/></svg>");
+}
+
+/* Phần 5: list-style-position */
+.two-columns {
+  display: flex;
+  gap: 30px;
+}
+
+.two-columns > div {
+  flex: 1;
+}
+
+.pos-outside,
+.pos-inside {
+  background-color: #f5f5f5;
+  padding: 10px 10px 10px 30px;
+  border: 1px solid #ccc;
+}
+
+.pos-outside {
+  list-style-position: outside;
+}
+
+.pos-inside {
+  list-style-position: inside;
+  padding-left: 10px;
+}
+
+/* Phần 6: list-style rút gọn (type position image) */
+.shorthand-list {
+  list-style: square inside url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14'><rect width='12' height='12' fill='%23e8541e'/></svg>");
+}
+
+/* Phần 7: màu sắc và khoảng cách */
+.color-list {
+  background-color: #1565c0;
+  color: #ffffff;
+  padding: 20px 20px 20px 45px;
+}
+
+.color-list li {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+/* Phần 8: bài tập tổng hợp */
+.roadmap {
+  list-style: decimal-leading-zero outside;
+  background-color: #fff3e0;
+  color: #bf360c;
+  padding: 20px 20px 20px 55px;
+  margin: 20px 0;
+  border-left: 6px solid #e8541e;
+  border-radius: 4px;
+}
+
+.roadmap li {
+  margin-bottom: 10px;
+  font-weight: bold;
+}

@@ -3,108 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lịch họp công ty</title>
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      margin: 30px;
-    }
-    h1 {
-      text-align: center;
-      color: #1565c0;
-    }
-    table {
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-      border-collapse: collapse;
-    }
-    th, td {
-      border: 1px solid #999;
-      padding: 10px 14px;
-      text-align: center;
-    }
-    th {
-      background-color: #1565c0;
-      color: #fff;
-    }
-    td.date {
-      background-color: #e3f2fd;
-      font-weight: bold;
-    }
-    td.content {
-      text-align: left;
-    }
-    td.allday {
-      background-color: #fff3e0;
-      font-weight: bold;
-    }
-    td.note {
-      background-color: #f5f5f5;
-      font-style: italic;
-      text-align: left;
-    }
-  </style>
+  <title>Định kiểu danh sách bằng CSS</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Lịch họp công ty</h1>
+  <h1>Luyện tập định kiểu danh sách</h1>
 
-  <table>
-    <tr>
-      <th>Ngày</th>
-      <th>Giờ</th>
-      <th>Nội dung cuộc họp</th>
-    </tr>
+  <!-- Phần 2: list-style-type: square -->
+  <h2>2. Danh sách không có thứ tự (square)</h2>
+  <ul class="square-list">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li>Git</li>
+  </ul>
 
-    <!-- Thứ Ba: 3 cuộc họp -> rowspan="3" -->
-    <tr>
-      <td class="date" rowspan="3">Thứ Ba<br>06/10/2026</td>
-      <td>08:00 - 09:00</td>
-      <td class="content">Họp giao ban đầu tuần</td>
-    </tr>
-    <tr>
-      <td>09:30 - 11:00</td>
-      <td class="content">Họp kế hoạch kinh doanh quý IV</td>
-    </tr>
-    <tr>
-      <td>14:00 - 16:00</td>
-      <td class="content">Họp với khách hàng đối tác</td>
-    </tr>
+  <!-- Phần 3: list-style-type: upper-roman -->
+  <h2>3. Danh sách có thứ tự (số La Mã)</h2>
+  <ol class="roman-list">
+    <li>Học HTML</li>
+    <li>Học CSS</li>
+    <li>Học JavaScript</li>
+    <li>Học Git</li>
+  </ol>
 
-    <!-- Thứ Tư: 2 cuộc họp -> rowspan="2" -->
-    <tr>
-      <td class="date" rowspan="2">Thứ Tư<br>07/10/2026</td>
-      <td>08:30 - 10:00</td>
-      <td class="content">Đào tạo kỹ năng cho nhân viên mới</td>
-    </tr>
-    <tr>
-      <td>13:30 - 15:00</td>
-      <td class="content">Họp báo cáo tiến độ dự án</td>
-    </tr>
+  <!-- Phần 4: list-style-image -->
+  <h2>4. Dùng hình ảnh làm dấu đánh dấu</h2>
+  <ul class="image-list">
+    <li>Visual Studio Code</li>
+    <li>Google Chrome</li>
+    <li>GitHub</li>
+    <li>Git</li>
+  </ul>
 
-    <!-- Thứ Năm: sự kiện cả ngày -> colspan="2" gộp cột Giờ và Nội dung -->
-    <tr>
-      <td class="date">Thứ Năm<br>08/10/2026</td>
-      <td class="allday" colspan="2">Cả ngày (08:00 - 17:00): Hội thảo chuyển đổi số toàn công ty</td>
-    </tr>
+  <!-- Phần 5: list-style-position -->
+  <h2>5. Vị trí dấu đánh dấu</h2>
+  <div class="two-columns">
+    <div>
+      <h3>outside</h3>
+      <ul class="pos-outside">
+        <li>Đây là một mục có nội dung khá dài để bạn thấy rõ sự khác nhau khi xuống dòng.</li>
+        <li>Mục thứ hai cũng có nội dung dài tương tự để so sánh vị trí dấu đánh dấu.</li>
+        <li>Mục thứ ba</li>
+      </ul>
+    </div>
+    <div>
+      <h3>inside</h3>
+      <ul class="pos-inside">
+        <li>Đây là một mục có nội dung khá dài để bạn thấy rõ sự khác nhau khi xuống dòng.</li>
+        <li>Mục thứ hai cũng có nội dung dài tương tự để so sánh vị trí dấu đánh dấu.</li>
+        <li>Mục thứ ba</li>
+      </ul>
+    </div>
+  </div>
 
-    <!-- Thứ Sáu: 2 cuộc họp -> rowspan="2" -->
-    <tr>
-      <td class="date" rowspan="2">Thứ Sáu<br>09/10/2026</td>
-      <td>09:00 - 11:00</td>
-      <td class="content">Họp đánh giá hiệu quả làm việc</td>
-    </tr>
-    <tr>
-      <td>15:00 - 17:00</td>
-      <td class="content">Tổng kết tuần và phân công công việc</td>
-    </tr>
+  <!-- Phần 6: list-style rút gọn -->
+  <h2>6. Thuộc tính rút gọn list-style</h2>
+  <ul class="shorthand-list">
+    <li>Mục thứ nhất</li>
+    <li>Mục thứ hai</li>
+    <li>Mục thứ ba</li>
+  </ul>
 
-    <!-- Hàng ghi chú -> colspan="3" gộp cả 3 cột -->
-    <tr>
-      <td class="note" colspan="3">Ghi chú: Các cuộc họp diễn ra tại phòng họp tầng 3. Vui lòng có mặt trước 5 phút.</td>
-    </tr>
-  </table>
+  <!-- Phần 7: màu sắc và khoảng cách -->
+  <h2>7. Danh sách có màu sắc</h2>
+  <ul class="color-list">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li>Python</li>
+  </ul>
+
+  <!-- Phần 8: bài tập tổng hợp -->
+  <h2>8. Lộ trình học lập trình Web</h2>
+  <ol class="roadmap">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+    <li>Git</li>
+    <li>GitHub</li>
+  </ol>
 
 </body>
 </html>
