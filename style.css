@@ -1,95 +1,80 @@
+/* Định dạng chung */
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  color: #333;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    text-align: center;
+    margin: 0;
 }
 
-h1 {
-  text-align: center;
-  color: #1565c0;
+/* Định dạng tiêu đề (có ảnh nền) */
+header {
+    background-color: #4CAF50;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><circle cx='20' cy='20' r='3' fill='%23ffffff' fill-opacity='0.25'/></svg>");
+    background-repeat: repeat;
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+/* Định dạng ảnh đại diện */
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #4CAF50;
+    margin: 20px;
+    object-fit: cover;
+}
+
+/* Định dạng các phần nội dung */
+section {
+    max-width: 700px;
+    margin: 15px auto;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
 }
 
 h2 {
-  color: #1565c0;
-  border-bottom: 2px solid #e3f2fd;
-  padding-bottom: 5px;
-  margin-top: 35px;
+    color: #2e7d32;
 }
 
-/* Phần 2: list-style-type */
-.square-list {
-  list-style-type: square;
+/* Định dạng danh sách */
+ul {
+    list-style-type: square;
+    text-align: left;
+    display: inline-block;
+    margin-top: 10px;
 }
 
-/* Phần 3: số La Mã viết hoa */
-.roman-list {
-  list-style-type: upper-roman;
+/* Định dạng bảng */
+table {
+    margin: auto;
+    border-collapse: collapse;
+    width: 50%;
+    background-color: #ffffff;
 }
 
-/* Phần 4: list-style-image
-   Dùng hình SVG nhỏ nhúng sẵn (data URI) nên không cần file ảnh riêng.
-   Nếu muốn dùng ảnh của bạn, thay bằng: url("icon.png") */
-.image-list {
-  list-style-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14'><circle cx='7' cy='7' r='6' fill='%231565c0'/></svg>");
+th, td {
+    border: 1px solid black;
+    padding: 10px;
 }
 
-/* Phần 5: list-style-position */
-.two-columns {
-  display: flex;
-  gap: 30px;
+th {
+    background-color: #4CAF50;
+    color: white;
 }
 
-.two-columns > div {
-  flex: 1;
-}
-
-.pos-outside,
-.pos-inside {
-  background-color: #f5f5f5;
-  padding: 10px 10px 10px 30px;
-  border: 1px solid #ccc;
-}
-
-.pos-outside {
-  list-style-position: outside;
-}
-
-.pos-inside {
-  list-style-position: inside;
-  padding-left: 10px;
-}
-
-/* Phần 6: list-style rút gọn (type position image) */
-.shorthand-list {
-  list-style: square inside url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14'><rect width='12' height='12' fill='%23e8541e'/></svg>");
-}
-
-/* Phần 7: màu sắc và khoảng cách */
-.color-list {
-  background-color: #1565c0;
-  color: #ffffff;
-  padding: 20px 20px 20px 45px;
-}
-
-.color-list li {
-  margin: 10px 0;
-  font-size: 18px;
-}
-
-/* Phần 8: bài tập tổng hợp */
-.roadmap {
-  list-style: decimal-leading-zero outside;
-  background-color: #fff3e0;
-  color: #bf360c;
-  padding: 20px 20px 20px 55px;
-  margin: 20px 0;
-  border-left: 6px solid #e8541e;
-  border-radius: 4px;
-}
-
-.roadmap li {
-  margin-bottom: 10px;
-  font-weight: bold;
+/* Định dạng footer */
+footer {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ddd;
 }

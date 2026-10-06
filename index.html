@@ -1,160 +1,48 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Định kiểu bảng bằng CSS</title>
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      color: #1565c0;
-    }
-    h2 {
-      color: #1565c0;
-      margin-top: 35px;
-    }
-
-    /* 1. Đường viền (bị viền kép) */
-    .t1, .t1 th, .t1 td {
-      border: 1px solid black;
-    }
-
-    /* 2. Gộp viền */
-    .t2 {
-      border-collapse: collapse;
-    }
-    .t2, .t2 th, .t2 td {
-      border: 1px solid black;
-    }
-
-    /* 3. Chiều rộng và chiều cao */
-    .t3 {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .t3, .t3 th, .t3 td {
-      border: 1px solid black;
-    }
-    .t3 th {
-      height: 50px;
-    }
-
-    /* 4. Căn ngang */
-    .t4 {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .t4, .t4 th, .t4 td {
-      border: 1px solid black;
-    }
-    .t4 th {
-      text-align: left;
-    }
-
-    /* 5. Căn dọc */
-    .t5 {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .t5, .t5 th, .t5 td {
-      border: 1px solid black;
-    }
-    .t5 td {
-      height: 80px;
-      vertical-align: bottom;
-    }
-
-    /* 6. Padding */
-    .t6 {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .t6, .t6 th, .t6 td {
-      border: 1px solid black;
-    }
-    .t6 th, .t6 td {
-      padding: 15px;
-    }
-
-    /* 7. Màu sắc */
-    .t7 {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .t7, .t7 th, .t7 td {
-      border: 1px solid black;
-    }
-    .t7 th {
-      background-color: #333;
-      color: white;
-      padding: 12px;
-      text-align: left;
-    }
-    .t7 td {
-      background-color: #f2f2f2;
-      color: #333;
-      padding: 12px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web Cá Nhân</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>Chào mừng đến với trang web cá nhân của tôi</h1>
+    </header>
 
-  <h1>Định kiểu bảng bằng CSS</h1>
+    <section class="profile">
+        <img src="avatar.jpg" alt="Ảnh đại diện" class="avatar">
+        <p>Xin chào! Tôi là <strong>Nguyễn Văn A</strong>, một lập trình viên yêu thích công nghệ.</p>
+    </section>
 
-  <h2>1. Đường viền của bảng (viền kép)</h2>
-  <table class="t1">
-    <tr><th>Họ tên</th><th>Tuổi</th><th>Lớp</th></tr>
-    <tr><td>Nguyễn Văn A</td><td>20</td><td>Web</td></tr>
-    <tr><td>Trần Thị B</td><td>21</td><td>Web</td></tr>
-  </table>
+    <section class="hobbies">
+        <h2>Sở thích</h2>
+        <ul>
+            <li>Đọc sách</li>
+            <li>Chơi thể thao</li>
+            <li>Lập trình</li>
+            <li>Du lịch</li>
+        </ul>
+    </section>
 
-  <h2>2. Gộp đường viền (border-collapse)</h2>
-  <table class="t2">
-    <tr><th>Họ tên</th><th>Tuổi</th><th>Lớp</th></tr>
-    <tr><td>Nguyễn Văn A</td><td>20</td><td>Web</td></tr>
-    <tr><td>Trần Thị B</td><td>21</td><td>Web</td></tr>
-  </table>
+    <section class="goals">
+        <h2>Mục tiêu học tập</h2>
+        <p>Tôi muốn trở thành một lập trình viên chuyên nghiệp, xây dựng các sản phẩm hữu ích.</p>
+    </section>
 
-  <h2>3. Chiều rộng và chiều cao</h2>
-  <table class="t3">
-    <tr><th>Họ tên</th><th>Tuổi</th><th>Lớp</th></tr>
-    <tr><td>Nguyễn Văn A</td><td>20</td><td>Web</td></tr>
-    <tr><td>Trần Thị B</td><td>21</td><td>Web</td></tr>
-  </table>
-
-  <h2>4. Căn chỉnh theo chiều ngang</h2>
-  <table class="t4">
-    <tr><th>Họ tên</th><th>Tuổi</th><th>Lớp</th></tr>
-    <tr><td>Nguyễn Văn A</td><td>20</td><td>Web</td></tr>
-    <tr><td>Trần Thị B</td><td>21</td><td>Web</td></tr>
-  </table>
-
-  <h2>5. Căn chỉnh theo chiều dọc</h2>
-  <table class="t5">
-    <tr><th>Họ tên</th><th>Tuổi</th><th>Lớp</th></tr>
-    <tr><td>Nguyễn Văn A</td><td>20</td><td>Web</td></tr>
-    <tr><td>Trần Thị B</td><td>21</td><td>Web</td></tr>
-  </table>
-
-  <h2>6. Padding trong bảng</h2>
-  <table class="t6">
-    <tr><th>Họ tên</th><th>Tuổi</th><th>Lớp</th></tr>
-    <tr><td>Nguyễn Văn A</td><td>20</td><td>Web</td></tr>
-    <tr><td>Trần Thị B</td><td>21</td><td>Web</td></tr>
-  </table>
-
-  <h2>7. Màu sắc trong bảng</h2>
-  <table class="t7">
-    <tr><th>Họ tên</th><th>Tuổi</th><th>Lớp</th></tr>
-    <tr><td>Nguyễn Văn A</td><td>20</td><td>Web</td></tr>
-    <tr><td>Trần Thị B</td><td>21</td><td>Web</td></tr>
-  </table>
-
+    <footer>
+        <h2>Thông tin liên hệ</h2>
+        <table>
+            <tr>
+                <th>Email</th>
+                <td>nguyenvana@example.com</td>
+            </tr>
+            <tr>
+                <th>Facebook</th>
+                <td><a href="#">facebook.com/nguyenvana</a></td>
+            </tr>
+        </table>
+    </footer>
 </body>
 </html>
