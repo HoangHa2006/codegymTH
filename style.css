@@ -1,35 +1,63 @@
-/* Màu nền cho toàn trang */
+/* Định dạng chung */
+* {
+    box-sizing: border-box; /* thêm: padding không làm tràn chiều rộng/chiều cao */
+}
+
+html {
+    scroll-behavior: smooth; /* thêm: cuộn mượt khi bấm menu */
+}
+
 body {
-  background-color: #e3f2fd;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #333;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 30px 15px;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-h1 {
-  text-align: center;
-  color: #1565c0;
+/* Thanh điều hướng */
+.sticky-menu {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    z-index: 1000;
 }
 
-p {
-  font-size: 17px;
-  line-height: 1.6;
+.sticky-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
-/* Khối div có ảnh nền và nội dung căn giữa */
-.important-box {
-  background-color: #1565c0; /* màu dự phòng nếu ảnh không tải được */
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><circle cx='20' cy='20' r='4' fill='%23ffffff' fill-opacity='0.3'/></svg>");
-  background-repeat: repeat;
-  color: #ffffff;
-  text-align: center;
-  padding: 40px 20px;
-  margin-top: 30px;
-  border-radius: 8px;
+.sticky-menu ul li {
+    margin: 0 15px;
 }
 
-.important-box h2 {
-  margin-top: 0;
+.sticky-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    display: block;
 }
+
+.sticky-menu ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Nội dung trang web */
+section {
+    padding: 100px 20px;
+    height: 100vh;
+    scroll-margin-top: 60px; /* thêm: tiêu đề không bị menu che khi bấm link */
+}
+
+#home { background-color: #f4f4f4; }
+#about { background-color: #ddd; }
+#services { background-color: #bbb; }
+#contact { background-color: #999; }
