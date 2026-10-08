@@ -4,18 +4,22 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;   /* thêm: cuộn mượt khi bấm menu */
+}
+
 body {
     font-family: Arial, sans-serif;
 }
 
-.navbar {
+/* ===== Header (Flexbox) ===== */
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #333;
     padding: 15px 20px;
     color: white;
-    position: relative;   /* thêm: làm mốc định vị cho menu mobile */
 }
 
 .logo {
@@ -23,58 +27,123 @@ body {
     font-weight: bold;
 }
 
-.nav-links {
+.nav ul {
     list-style: none;
     display: flex;
+    gap: 30px;
 }
 
-.nav-links li {
-    margin: 0 15px;
-}
-
-.nav-links a {
+.nav ul li a {
     text-decoration: none;
     color: white;
+}
+
+.nav ul li a:hover {
+    color: #ffeb3b;
+}
+
+/* ===== Hero ===== */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #f4f4f4;
+}
+
+.hero h1 {
+    margin-bottom: 15px;
+}
+
+.hero p {
+    margin-bottom: 25px;
     font-size: 18px;
 }
 
-.nav-links a:hover {
-    color: #ffeb3b;       /* thêm: hiệu ứng khi rê chuột */
+/* thêm: đề có class .btn nhưng chưa có CSS */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #1565c0;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
-.menu-icon {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
+.btn:hover {
+    background-color: #e8541e;
 }
 
-.content {
-    padding: 30px 20px;
+/* ===== Dịch vụ (Grid) ===== */
+.services {
+    text-align: center;
+    padding: 50px 20px;
 }
 
-/* Responsive cho Mobile */
+.services h2 {
+    margin-bottom: 25px;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.service {
+    background-color: lightblue;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+/* ===== Testimonial ===== */
+.testimonials {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #ddd;
+}
+
+.testimonials h2 {
+    margin-bottom: 25px;
+}
+
+.testimonial {
+    max-width: 600px;
+    margin: 0 auto 15px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+/* ===== Footer ===== */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+/* ===== Responsive cho Mobile ===== */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;        /* đổi từ 60px: luôn nằm ngay dưới navbar */
-        left: 0;
-        background-color: #333;
-        width: 100%;
-        text-align: center;
+    .header {
+        flex-direction: column;   /* logo ở trên, menu ở dưới */
+        gap: 10px;
     }
 
-    .nav-links li {
-        padding: 10px;
+    .nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
     }
 
-    .menu-icon {
-        display: block;
+    .hero {
+        padding: 60px 20px;
     }
-}
 
-/* Hiển thị menu khi có class active */
-.nav-links.active {
-    display: flex;
+    .services,
+    .testimonials {
+        padding: 40px 20px;
+    }
+
+    .service-container {
+        grid-template-columns: 1fr;   /* mỗi dịch vụ một hàng */
+    }
 }
