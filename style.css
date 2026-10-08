@@ -1,40 +1,80 @@
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
 }
 
-h1 {
-    color: #1565c0;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 20px;
+    color: white;
+    position: relative;   /* thêm: làm mốc định vị cho menu mobile */
 }
 
-.container {
-    width: 100%;
-    overflow: hidden;   /* giúp container ôm trọn 2 cột đang float */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.left-column {
-    width: 50%;
-    float: left;
-    background-color: lightgray;
-    padding: 20px;
+.nav-links {
+    list-style: none;
+    display: flex;
 }
 
-.right-column {
-    width: 50%;
-    float: right;
-    background-color: lightgreen;
-    padding: 20px;
+.nav-links li {
+    margin: 0 15px;
 }
 
-.overflow-box {
-    width: 300px;
-    height: 100px;
-    background-color: lightcoral;
-    padding: 10px;
-    overflow: auto;     /* hiện thanh cuộn khi nội dung quá dài */
-    margin-top: 20px;
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.nav-links a:hover {
+    color: #ffeb3b;       /* thêm: hiệu ứng khi rê chuột */
+}
+
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.content {
+    padding: 30px 20px;
+}
+
+/* Responsive cho Mobile */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;        /* đổi từ 60px: luôn nằm ngay dưới navbar */
+        left: 0;
+        background-color: #333;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li {
+        padding: 10px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+/* Hiển thị menu khi có class active */
+.nav-links.active {
+    display: flex;
 }

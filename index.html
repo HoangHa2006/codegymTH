@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bố cục với Float và Overflow</title>
+    <title>Responsive Navbar</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <h1>Bố cục trang với float và overflow</h1>
+    <nav class="navbar">
+        <div class="logo">MyWebsite</div>
+        <ul class="nav-links">
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Dịch vụ</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+        <div class="menu-icon">☰</div>
+    </nav>
 
-    <div class="container">
-        <div class="left-column">Nội dung bên trái</div>
-        <div class="right-column">Nội dung bên phải</div>
-    </div>
-
-    <div class="overflow-box">
-        Đây là nội dung rất dài mà chúng ta kiểm tra overflow. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies nunc in mauris pharetra, a ultricies justo fermentum. Vivamus lacinia, nibh vitae facilisis tincidunt, justo erat porta massa, at pulvinar nisl lorem sed est. Cras sit amet urna a lectus ultrices pretium. Nam vel diam ac turpis tincidunt luctus.
-    </div>
+    <main class="content">
+        <h1>Nội dung trang</h1>
+        <p>Thu nhỏ cửa sổ trình duyệt dưới 768px để thấy biểu tượng ☰ xuất hiện.</p>
+    </main>
 </body>
 </html>
