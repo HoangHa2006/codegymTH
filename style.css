@@ -1,63 +1,103 @@
-/* Định dạng chung */
-* {
-    box-sizing: border-box; /* thêm: padding không làm tràn chiều rộng/chiều cao */
-}
-
+/* Thiết lập cơ bản (đã gộp các khai báo body/html lặp lại) */
 html {
-    scroll-behavior: smooth; /* thêm: cuộn mượt khi bấm menu */
+    height: 100%;
 }
 
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding-top: 70px;    /* bằng chiều cao header để nội dung không bị che */
+    min-height: 1500px;   /* đủ dài để cuộn thử trang */
 }
 
-/* Thanh điều hướng */
-.sticky-menu {
-    position: sticky;
+/* Header cố định */
+.main-header {
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     background-color: #333;
     color: white;
-    padding: 10px;
-    text-align: center;
-    width: 100%;
+    padding: 15px 20px;
+    box-sizing: border-box;   /* thêm: padding không làm header rộng quá màn hình */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     z-index: 1000;
 }
 
-.sticky-menu ul {
-    list-style: none;
-    padding: 0;
+.main-header h1 {
     margin: 0;
+    font-size: 24px;
+}
+
+.main-header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: center;
 }
 
-.sticky-menu ul li {
-    margin: 0 15px;
+.main-header nav ul li {
+    margin-left: 20px;
 }
 
-.sticky-menu ul li a {
+.main-header nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
-    padding: 10px;
-    display: block;
+    font-weight: bold;
 }
 
-.sticky-menu ul li a:hover {
-    background-color: #575757;
+.main-header nav ul li a:hover {
+    text-decoration: underline;   /* thêm: hiệu ứng khi rê chuột */
+}
+
+/* Container cho bố cục chính (sidebar + nội dung) */
+.page-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    gap: 20px;
+}
+
+.sidebar {
+    background-color: #fff;
+    padding: 15px;
     border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
 }
 
-/* Nội dung trang web */
-section {
-    padding: 100px 20px;
-    height: 100vh;
-    scroll-margin-top: 60px; /* thêm: tiêu đề không bị menu che khi bấm link */
+.left-sidebar {
+    width: 200px;
 }
 
-#home { background-color: #f4f4f4; }
-#about { background-color: #ddd; }
-#services { background-color: #bbb; }
-#contact { background-color: #999; }
+.right-sidebar {
+    width: 200px;
+}
+
+.main-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+}
+
+/* Kiểu dáng phụ cho sidebar */
+.sidebar h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+    color: #555;
+}
