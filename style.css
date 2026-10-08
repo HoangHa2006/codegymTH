@@ -1,26 +1,122 @@
-.container {
-    width: 100%;
+/* Bước 1: phông chữ cho trang và vùng chứa chính căn giữa */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    background-color: #eceff1;
+    margin: 0;
+    padding: 10px 0;
 }
 
-.left-column {
-    width: 60%;
+#main {
+    width: 960px;
+    margin: 0 auto;
+}
+
+/* Bước 2: vùng head */
+#head {
+    height: 120px;
+    background-color: #ffcc80;
+    border: 1px solid #999;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+#head h1 {
+    margin: 0;
+    line-height: 120px;
+}
+
+/* Bước 4: vùng liên kết đầu trang */
+#head-link {
+    height: 40px;
+    line-height: 40px;
+    background-color: #455a64;
+    border: 1px solid #999;
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+
+#head-link a {
+    color: #ffffff;
+    margin-right: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#head-link a:hover {
+    color: #ffeb3b;
+}
+
+/* Bước 6: vùng bên trái, float: left để nhường chỗ cho content và right */
+#left {
+    width: 200px;
+    min-height: 400px;
     float: left;
-    background-color: lightblue;
-    padding: 20px;
+    background-color: #c5e1a5;
+    border: 1px solid #999;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+#left ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#left li {
+    margin-bottom: 8px;
+}
+
+/* Bước 8: vùng giữa và vùng phải */
+#content {
+    width: 540px;
+    min-height: 400px;
+    float: left;
+    margin: 0 10px;
     box-sizing: border-box;
 }
 
-.right-column {
-    width: 38%;
-    float: right;
-    background-color: lightgreen;
-    padding: 20px;
-    box-sizing: border-box; /* thêm: để padding không làm cột rộng hơn 38% */
+#right {
+    width: 200px;
+    min-height: 400px;
+    float: left;
+    background-color: #b3e5fc;
+    border: 1px solid #999;
+    box-sizing: border-box;
+    padding: 10px;
 }
 
-/* Xử lý float */
-.container::after {
-    content: "";
-    display: block;
+/* Các khối con bên trong content và right */
+.box {
+    background-color: #ffffff;
+    border: 1px solid #999;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.widget {
+    background-color: #ffffff;
+    border: 1px solid #999;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+/* Bước 10: vùng footer, clear: both để nằm dưới cả 3 cột */
+#footer {
     clear: both;
-} 
+    background-color: #37474f;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #999;
+}
+
+#footer a {
+    color: #ffeb3b;
+    text-decoration: none;
+}

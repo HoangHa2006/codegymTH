@@ -3,13 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bố cục bằng Float</title>
+    <title>Bố cục trang web bằng DIV và CSS</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="left-column">Cột bên trái chứa nội dung chính</div>
-        <div class="right-column">Cột bên phải chứa sidebar</div>
+    <div id="main">
+
+        <div id="head">
+            <h1>LOGO - BANNER</h1>
+        </div>
+
+        <div id="head-link">
+            <a href="#">Home</a>
+            <a href="#">Students</a>
+            <a href="#">Course</a>
+            <a href="#">Teachers</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div id="left">
+            <h3>Liên kết</h3>
+            <ul>
+                <li><a href="#">Link trái 1</a></li>
+                <li><a href="#">Link trái 2</a></li>
+                <li><a href="#">Link trái 3</a></li>
+                <li><a href="#">Link trái 4</a></li>
+            </ul>
+        </div>
+
+        <div id="content">
+            <div class="box">
+                <h3>Hot news</h3>
+                <p>Nội dung tin nổi bật của trang web.</p>
+            </div>
+            <div class="box">
+                <h3>Photo Slide</h3>
+                <p>Khu vực trình chiếu hình ảnh.</p>
+            </div>
+            <div class="box">
+                <h3>News 1</h3>
+                <p>Nội dung tin tức số 1.</p>
+            </div>
+            <div class="box">
+                <h3>News 2</h3>
+                <p>Nội dung tin tức số 2.</p>
+            </div>
+        </div>
+
+        <div id="right">
+            <div class="widget">
+                <h3>Lịch</h3>
+                <p>Khu vực hiển thị lịch.</p>
+            </div>
+            <div class="widget">
+                <h3>Biểu đồ</h3>
+                <p>Khu vực hiển thị biểu đồ.</p>
+            </div>
+            <div class="widget">
+                <h3>Bản đồ</h3>
+                <p>Khu vực hiển thị bản đồ.</p>
+            </div>
+        </div>
+
+        <div id="footer">
+            <p>&copy; 2026 Tên chủ sở hữu. Bảo lưu mọi quyền.</p>
+            <p><a href="#">Điều khoản</a> | <a href="#">Chính sách</a> | <a href="#">Liên hệ</a></p>
+        </div>
+
     </div>
 </body>
 </html>
