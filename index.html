@@ -3,21 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trang web của tôi</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Menu dropdown bằng CSS</title>
+  <style>
+    /* Bước 1: phông chữ cho trang và phân vùng cho trình đơn */
+    html, body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      margin: 0;
+      padding: 0;
+    }
+
+    #menu {
+      height: 40px;
+      border: 1px solid #333;
+      padding: 0;
+      margin: 20px;
+      background-color: #333;
+    }
+
+    /* Bước 2: bộ chọn cho danh sách và các phần tử trong danh sách */
+    #menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    #menu li {
+      float: left;            /* xếp các mục ngang hàng */
+      position: relative;     /* làm mốc định vị cho menu con */
+    }
+
+    /* Bước 3: bộ chọn cho các liên kết trong trình đơn */
+    #menu a {
+      display: block;
+      width: 130px;
+      height: 40px;
+      line-height: 40px;      /* căn chữ giữa theo chiều dọc */
+      text-align: center;
+      text-decoration: none;
+      color: #ffffff;
+    }
+
+    /* Bước 4: đưa con trỏ qua liên kết thì nền chuyển sang đỏ */
+    #menu a:hover {
+      background-color: red;
+    }
+
+    /* Bước 5 + 6: menu con nằm ngay dưới mục cha và được ẩn đi */
+    #menu ul ul {
+      position: absolute;
+      top: 40px;
+      left: 0;
+      visibility: hidden;
+      background-color: #333;
+    }
+
+    /* Các mục của menu con xếp dọc từ trên xuống */
+    #menu ul ul li {
+      float: none;
+    }
+
+    /* Bước 7: hiện menu con khi đưa con trỏ qua mục cha */
+    #menu li:hover > ul {
+      visibility: visible;
+    }
+  </style>
 </head>
 <body>
 
-  <h1>Chào mừng đến với trang web của tôi</h1>
-
-  <p>
-    Đây là trang web luyện tập sử dụng màu nền và ảnh nền trong CSS.
-    Màu nền được áp dụng cho toàn trang, còn ảnh nền được dùng cho khối nội dung bên dưới.
-  </p>
-
-  <div class="important-box">
-    <h2>Nội dung quan trọng</h2>
-    <p>Học CSS từng bước mỗi ngày sẽ giúp bạn thiết kế được những trang web đẹp.</p>
+  <div id="menu">
+    <ul>
+      <li><a href="#">Trang chủ</a></li>
+      <li>
+        <a href="#">Sản phẩm</a>
+        <ul>
+          <li><a href="#">Laptop</a></li>
+          <li><a href="#">Điện thoại</a></li>
+          <li><a href="#">Máy tính bảng</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Dịch vụ</a>
+        <ul>
+          <li><a href="#">Bảo hành</a></li>
+          <li><a href="#">Sửa chữa</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Liên hệ</a></li>
+    </ul>
   </div>
 
 </body>
