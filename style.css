@@ -1,60 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 20px;
+    margin: 20px;
 }
 
 h1 {
     color: #1565c0;
 }
 
-nav {
-    background-color: #eceff1;
-    padding: 10px;
+.container {
+    width: 100%;
+    overflow: hidden;   /* giúp container ôm trọn 2 cột đang float */
 }
 
-nav a {
-    display: inline-block;
-    margin: 0 15px;
-    padding: 8px 12px;
-    text-decoration: none;
-    color: #333;
-}
-
-nav a:hover {
-    background-color: #1565c0;
-    color: #fff;
-    border-radius: 4px;
-}
-
-section {
-    margin-top: 20px;
-}
-
-.box {
-    display: inline-block;
-    vertical-align: top;          /* các cột thẳng hàng ở mép trên */
-    box-sizing: border-box;       /* padding nằm trong width, không làm cột phình ra */
-    width: 30%;
-    max-width: 300px;             /* không rộng quá 300px trên màn hình lớn */
+.left-column {
+    width: 50%;
+    float: left;
+    background-color: lightgray;
     padding: 20px;
-    margin: 10px 0.5%;
-    background-color: lightblue;
 }
 
-footer {
-    margin-top: 20px;
+.right-column {
+    width: 50%;
+    float: right;
+    background-color: lightgreen;
+    padding: 20px;
+}
+
+.overflow-box {
+    width: 300px;
+    height: 100px;
+    background-color: lightcoral;
     padding: 10px;
-    background-color: #eceff1;
-}
-
-/* Điện thoại: mỗi cột chiếm một hàng */
-@media (max-width: 600px) {
-    .box {
-        display: block;
-        width: auto;
-        max-width: 100%;
-        margin: 10px 0;
-    }
+    overflow: auto;     /* hiện thanh cuộn khi nội dung quá dài */
+    margin-top: 20px;
 }
