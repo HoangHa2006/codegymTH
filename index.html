@@ -1,49 +1,207 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Chủ Giản Lược</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phim hoạt hình cho bé</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f4f7fb;
+      color: #333;
+      padding-top: 104px;           /* bằng chiều cao phần header cố định */
+    }
+
+    /* ===== Mức trung bình: header cố định ===== */
+    .top {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ===== Header ===== */
+    .header {
+      height: 60px;
+      background-color: #ff7043;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+    .logo {
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .search input {
+      padding: 7px 12px;
+      border: none;
+      border-radius: 20px;
+      font-size: 14px;
+      width: 200px;
+    }
+
+    /* ===== Head-link ===== */
+    .head-link {
+      height: 44px;
+      background-color: #333;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .head-link a {
+      color: #fff;
+      margin-right: 25px;
+      font-size: 15px;
+    }
+
+    /* ===== Liên kết: bỏ gạch chân, hover bôi đậm + đổi màu ===== */
+    a {
+      text-decoration: none;
+    }
+    a:hover {
+      font-weight: bold;
+      color: #ffeb3b;
+    }
+
+    /* ===== Content ===== */
+    .content {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Left content: danh sách video */
+    .left-content {
+      width: 300px;
+      flex-shrink: 0;
+      background-color: #fff;
+      border-radius: 6px;
+      padding: 15px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+      align-self: flex-start;
+    }
+    .left-content h3 {
+      margin: 0 0 10px;
+      color: #ff7043;
+    }
+    .left-content ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .left-content li a {
+      display: block;
+      padding: 10px;
+      color: #333;
+      border-bottom: 1px solid #eee;
+    }
+    .left-content li a:hover {
+      color: #ff7043;
+      background-color: #fff3e0;
+    }
+    .left-content li a.active {
+      background-color: #ffe0b2;
+      color: #e64a19;
+      font-weight: bold;
+    }
+
+    /* Right content: khu vực xem video */
+    .right-content {
+      flex: 1;
+      min-width: 0;
+      background-color: #fff;
+      border-radius: 6px;
+      padding: 15px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+    }
+    .player {
+      width: 100%;
+      aspect-ratio: 16 / 9;          /* giữ tỉ lệ 16:9 khi đổi kích thước */
+      background-color: #000;
+    }
+    .player iframe,
+    .player video {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+    #video-title {
+      margin: 12px 0 0;
+      color: #333;
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      background-color: #333;
+      color: #ddd;
+      text-align: center;
+      padding: 18px;
+      font-size: 14px;
+    }
+
+    /* ===== Mức nâng cao: Responsive ===== */
+
+    /* Tablet */
+    @media (max-width: 992px) {
+      .left-content { width: 240px; }
+      .search input { width: 150px; }
+    }
+
+    /* Điện thoại: xếp dọc, video lên trên danh sách */
+    @media (max-width: 768px) {
+      .content {
+        flex-direction: column;
+        padding: 12px;
+      }
+      .right-content { order: 1; }
+      .left-content {
+        order: 2;
+        width: 100%;
+      }
+      .header { padding: 0 12px; }
+      .logo { font-size: 20px; }
+      .search input { width: 120px; }
+    }
+  </style>
 </head>
 <body>
-    <header class="main-header">
-        <h1>Tiêu đề Trang Web</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Giới thiệu</a></li>
-                <li><a href="#">Dịch vụ</a></li>
-                <li><a href="#">Liên hệ</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <div class="page-container">
-        <aside class="sidebar left-sidebar">
-            <h3>Sidebar Trái</h3>
-            <ul>
-                <li>Mục 1</li>
-                <li>Mục 2</li>
-                <li>Mục 3</li>
-            </ul>
-        </aside>
-
-        <main class="main-content">
-            <h2>Nội dung chính của trang</h2>
-            <p>Đây là khu vực chứa nội dung quan trọng nhất của trang web. Chúng ta sẽ đặt các bài viết, sản phẩm, hoặc thông tin chi tiết tại đây.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, amet. Magnam, cumque. Repellendus, ea! Reprehenderit, quod. Ullam, quas. Dolorum, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, amet. Magnam, cumque. Repellendus, ea! Reprehenderit, quod. Ullam, quas. Dolorum, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, amet. Magnam, cumque. Repellendus, ea! Reprehenderit, quod. Ullam, quas. Dolorum, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, amet. Magnam, cumque. Repellendus, ea! Reprehenderit, quod. Ullam, quas. Dolorum, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, amet. Magnam, cumque. Repellendus, ea! Reprehenderit, quod. Ullam, quas. Dolorum, quod. Quos, nemo. Dolore, quod. Quos, nemo. Dolore, quod. Quos, nemo.</p>
-        </main>
-
-        <aside class="sidebar right-sidebar">
-            <h3>Sidebar Phải</h3>
-            <p>Đây là một sidebar khác, có thể chứa quảng cáo, bài viết liên quan hoặc các widget khác.</p>
-        </aside>
+  <!-- Header + Head-link (cố định khi cuộn) -->
+  <div class="top">
+    <div class="header">
+      <div class="logo">🎬 Phim Hoạt Hình</div>
+      <div class="search">
+        <input type="text" id="search" placeholder="Tìm phim theo tên...">
+      </div>
     </div>
+    <div class="head-link">
+      <a href="#">Trang chủ</a>
+      <a href="#">Phim mới cập nhật</a>
+      <a href="#">Xem nhiều nhất</a>
+      <a href="#">Giới thiệu</a>
+      <a href="#">Liên hệ</a>
+    </div>
+  </div>
 
-</body>
-</html>
+  <!-- Content -->
+  <div class="content">
+
+    <!-- Left content: danh sách video -->
+    <div class="left-content">
+      <h3>Danh sách phim</h3>
+      <ul id="video-list">
+        <li><a href="#" data-type="youtube" data-src="YE7VzlLtp-4">Big Buck Bunny</a></li>
+        <li><a href="#" data-type="youtube" data-src="eRsGyueVLvQ">Sintel</a></li>
+        <li><a href="#"
