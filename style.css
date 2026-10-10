@@ -1,5 +1,3 @@
-```css
-/* Thiết lập mặc định */
 * {
     margin: 0;
     padding: 0;
@@ -8,152 +6,108 @@
 
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
+    background-color: #f4f6f9;
     color: #333;
-    background-color: #f2f4f8;
+    line-height: 1.6;
 }
 
-/* Bố cục Grid chính */
-.container {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-areas:
-        "header header"
-        "navigation navigation"
-        "main sidebar"
-        "footer footer";
-    min-height: 100vh;
-}
-
-/* Header */
-.header {
-    grid-area: header;
+header {
     background-color: #243b55;
     color: white;
     text-align: center;
-    padding: 25px;
+    padding: 25px 15px;
 }
 
-/* Navigation */
-.navigation {
-    grid-area: navigation;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-    background-color: #141e30;
-    padding: 15px;
+main {
+    max-width: 1000px;
+    margin: 25px auto;
+    padding: 0 20px;
 }
 
-.navigation a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.navigation a:hover {
-    color: #ffd166;
-}
-
-/* Main Content */
-.main-content {
-    grid-area: main;
+section {
     background-color: white;
-    padding: 25px;
-    min-width: 0;
+    margin-bottom: 25px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #00000010;
 }
 
-.main-content h2 {
-    margin-bottom: 12px;
-}
-
-.main-content > p {
-    margin-bottom: 20px;
-}
-
-/* Các thẻ bài viết */
-.articles {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 15px;
-}
-
-.card {
-    background-color: #eaf2ff;
-    border: 1px solid #c7d9f5;
-    border-radius: 8px;
-    padding: 18px;
-    overflow-wrap: anywhere;
-}
-
-.card h3 {
-    color: #243b55;
+section h2 {
+    color: #174a7e;
     margin-bottom: 8px;
 }
 
-/* Sidebar */
-.sidebar {
-    grid-area: sidebar;
-    background-color: #e8ebf0;
-    padding: 25px;
-    min-width: 0;
+section p {
+    margin-bottom: 15px;
 }
 
-.sidebar h2,
-.sidebar h3 {
-    margin-bottom: 12px;
+/* Khung Flexbox chung */
+.container {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    max-width: 600px;
+    height: 230px;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 6px;
+    background-color: #fafafa;
 }
 
-.sidebar h3 {
-    margin-top: 25px;
+/* Các phần tử trong Flexbox */
+.item {
+    flex: 0 0 170px;
+    height: 70px;
+    padding: 20px 10px;
+    background-color: lightblue;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
 }
 
-.sidebar ul {
-    padding-left: 20px;
+/* Ví dụ 1 */
+.wrap {
+    flex-wrap: wrap;
 }
 
-.sidebar li {
-    margin-bottom: 10px;
+/* Ví dụ 2 */
+.nowrap {
+    flex-wrap: nowrap;
 }
 
-.sidebar a {
-    color: #174a7e;
+/* Ví dụ 3 */
+.reverse {
+    flex-wrap: wrap-reverse;
 }
 
-/* Footer */
-.footer {
-    grid-area: footer;
+/* Ví dụ 4 */
+.initial {
+    flex-wrap: initial;
+}
+
+/* Chân trang */
+footer {
     background-color: #243b55;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 18px;
 }
 
-/* Responsive cho mobile */
-@media (max-width: 768px) {
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 600px) {
+    main {
+        padding: 0 12px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
     .container {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "header"
-            "navigation"
-            "main"
-            "sidebar"
-            "footer";
+        max-width: 100%;
     }
 
-    .navigation {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .articles {
-        grid-template-columns: 1fr;
-    }
-
-    .main-content,
-    .sidebar {
-        padding: 20px;
+    .item {
+        flex-basis: 140px;
     }
 }
-```

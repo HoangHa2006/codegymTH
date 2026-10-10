@@ -4,65 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Grid Responsive</title>
+    <title>Thực hành CSS Flex Wrap</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <header>
+        <h1>Thực hành CSS Flexbox</h1>
+        <p>Tìm hiểu thuộc tính flex-wrap</p>
+    </header>
 
-        <header class="header">
-            <h1>Website của tôi</h1>
-            <p>Thực hành CSS Grid Responsive</p>
-        </header>
-
-        <nav class="navigation">
-            <a href="#home">Trang chủ</a>
-            <a href="#news">Tin tức</a>
-            <a href="#about">Giới thiệu</a>
-            <a href="#contact">Liên hệ</a>
-        </nav>
-
-        <main class="main-content" id="home">
-            <h2>Nội dung chính</h2>
-            <p>
-                CSS Grid là công cụ bố trí giao diện mạnh mẽ,
-                giúp chia trang web thành các hàng và cột.
-            </p>
-
-            <div class="articles">
-                <article class="card" id="news">
-                    <h3>Bài viết 1</h3>
-                    <p>Tìm hiểu các kiến thức cơ bản về HTML.</p>
-                </article>
-
-                <article class="card">
-                    <h3>Bài viết 2</h3>
-                    <p>Sử dụng CSS để thiết kế giao diện đẹp.</p>
-                </article>
-
-                <article class="card" id="about">
-                    <h3>Bài viết 3</h3>
-                    <p>Xây dựng website tương thích với nhiều thiết bị.</p>
-                </article>
+    <main>
+        <section>
+            <h2>1. flex-wrap: wrap</h2>
+            <p>Các phần tử tự động xuống dòng khi không đủ chỗ.</p>
+            <div class="container wrap">
+                <div class="item">Item 1</div>
+                <div class="item">Item 2</div>
+                <div class="item">Item 3</div>
+                <div class="item">Item 4</div>
+                <div class="item">Item 5</div>
+                <div class="item">Item 6</div>
             </div>
-        </main>
+        </section>
 
-        <aside class="sidebar">
-            <h2>Tin tức bên lề</h2>
-            <p>Thông tin cập nhật mới nhất.</p>
+        <section>
+            <h2>2. flex-wrap: nowrap</h2>
+            <p>Các phần tử được bố trí trên một dòng.</p>
+            <div class="container nowrap">
+                <div class="item">Item 1</div>
+                <div class="item">Item 2</div>
+                <div class="item">Item 3</div>
+                <div class="item">Item 4</div>
+            </div>
+        </section>
 
-            <h3>Liên kết hữu ích</h3>
-            <ul>
-                <li><a href="https://developer.mozilla.org/">MDN Web Docs</a></li>
-                <li><a href="https://www.w3schools.com/">W3Schools</a></li>
-            </ul>
-        </aside>
+        <section>
+            <h2>3. flex-wrap: wrap-reverse</h2>
+            <p>Các dòng được xếp theo hướng ngược trên trục phụ.</p>
+            <div class="container reverse">
+                <div class="item">Item 1</div>
+                <div class="item">Item 2</div>
+                <div class="item">Item 3</div>
+                <div class="item">Item 4</div>
+                <div class="item">Item 5</div>
+                <div class="item">Item 6</div>
+            </div>
+        </section>
 
-        <footer class="footer" id="contact">
-            <p>© 2026 - Thực hành CSS Grid Responsive</p>
-        </footer>
+        <section>
+            <h2>4. flex-wrap: initial</h2>
+            <p>Thuộc tính trở về giá trị mặc định là nowrap.</p>
+            <div class="container initial">
+                <div class="item">Item 1</div>
+                <div class="item">Item 2</div>
+                <div class="item">Item 3</div>
+                <div class="item">Item 4</div>
+            </div>
+        </section>
+    </main>
 
-    </div>
+    <footer>
+        <p>© 2026 - Bài thực hành CSS Flexbox</p>
+    </footer>
 </body>
 </html>
 ```
