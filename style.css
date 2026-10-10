@@ -1,81 +1,69 @@
 
-/* Giao diện chung */
+/* Cài đặt chung */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+}
+
 body {
     font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #f8f9fa;
-    margin: 0;
+    line-height: 1.6;
 }
 
-/* Logo trên Navbar */
-.navbar-brand {
-    font-size: 24px;
-    letter-spacing: 0.5px;
-}
-
-/* Hiệu ứng menu */
-.navbar .nav-link {
-    padding: 10px 16px;
-    transition: color 0.2s ease;
-}
-
-.navbar .nav-link:hover {
-    color: #8bb9ff;
-}
-
-/* Phần giới thiệu */
-.hero {
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #0d6efd, #084298);
     padding: 100px 20px;
-    color: white;
-    background: linear-gradient(135deg, #174ea6, #4285f4);
 }
 
-.hero h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+.hero-section h1 {
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.hero p {
-    max-width: 650px;
-    margin-left: auto;
-    margin-right: auto;
+/* About Section */
+.about-text {
+    max-width: 700px;
 }
 
-/* Các thẻ dịch vụ */
-.card {
+/* Service Cards */
+.service-card {
     border: none;
-    border-radius: 12px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-.card-title {
-    color: #174ea6;
+.service-icon {
+    font-size: 48px;
 }
 
-/* Khu vực liên hệ */
+/* Contact Section */
 .contact-section {
-    background-color: #e9f0fb;
+    background-color: #eaf2ff;
+}
+
+/* Footer */
+footer {
+    font-size: 14px;
 }
 
 /* Responsive cho điện thoại */
-@media (max-width: 991.98px) {
-    .navbar .nav-link {
-        padding: 10px 0;
+@media (max-width: 767.98px) {
+    .hero-section {
+        padding: 70px 15px;
     }
 
-    .navbar-nav {
-        padding-top: 10px;
+    .hero-section h1 {
+        font-size: 2rem;
     }
 
-    .hero {
-        padding: 65px 15px;
-    }
-
-    .hero p {
-        font-size: 16px;
+    .service-card {
+        margin-bottom: 10px;
     }
 }
