@@ -1,202 +1,81 @@
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
+/* Giao diện chung */
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
     color: #333;
-    background-color: #eef2f7;
+    background-color: #f8f9fa;
+    margin: 0;
 }
 
-/* Bố cục toàn trang */
-.container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    max-width: 1400px;
-    margin: 0 auto;
-    background-color: #fff;
+/* Logo trên Navbar */
+.navbar-brand {
+    font-size: 24px;
+    letter-spacing: 0.5px;
 }
 
-/* Header */
-.header {
-    background-color: #174ea6;
+/* Hiệu ứng menu */
+.navbar .nav-link {
+    padding: 10px 16px;
+    transition: color 0.2s ease;
+}
+
+.navbar .nav-link:hover {
+    color: #8bb9ff;
+}
+
+/* Phần giới thiệu */
+.hero {
+    padding: 100px 20px;
     color: white;
-    text-align: center;
-    padding: 30px 20px;
+    background: linear-gradient(135deg, #174ea6, #4285f4);
 }
 
-.header h1 {
-    margin-bottom: 5px;
-    font-size: 32px;
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
-/* Navigation */
-.navigation {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    background-color: #263746;
-    gap: 5px;
-    padding: 10px;
+.hero p {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.navigation a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-.navigation a:hover {
-    background-color: #4285f4;
-}
-
-/* Khu vực Main Content và Sidebar */
-.main-container {
-    display: flex;
-    flex: 1;
-    flex-flow: row nowrap;
-    align-items: stretch;
-    gap: 20px;
-    padding: 25px;
-}
-
-/* Nội dung chính chiếm 3 phần */
-.content {
-    flex: 3;
-    min-width: 0;
-}
-
-.content h2,
-.sidebar h2 {
-    color: #174ea6;
-    margin-bottom: 15px;
-}
-
-.content > p {
-    margin-bottom: 20px;
-}
-
-/* Các thẻ nội dung */
-.content-cards {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 15px;
-    margin-top: 20px;
-}
-
+/* Các thẻ dịch vụ */
 .card {
-    flex: 1 1 180px;
-    padding: 20px;
-    background-color: #f5f8fc;
-    border-left: 4px solid #4285f4;
-    border-radius: 6px;
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.card h3 {
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
+}
+
+.card-title {
     color: #174ea6;
-    margin-bottom: 8px;
 }
 
-/* Sidebar chiếm 1 phần */
-.sidebar {
-    flex: 1;
-    min-width: 0;
-    padding: 20px;
-    background-color: #edf2f7;
-    border-radius: 8px;
+/* Khu vực liên hệ */
+.contact-section {
+    background-color: #e9f0fb;
 }
 
-.sidebar-item {
-    padding: 15px;
-    margin-bottom: 15px;
-    background-color: white;
-    border: 1px solid #dce3eb;
-    border-radius: 6px;
-}
-
-.sidebar-item h3 {
-    color: #174ea6;
-    margin-bottom: 5px;
-}
-
-/* Footer */
-.footer {
-    margin-top: auto;
-    padding: 20px;
-    text-align: center;
-    color: white;
-    background-color: #263746;
-}
-
-/* Responsive trên tablet và mobile */
-@media (max-width: 768px) {
-    .header h1 {
-        font-size: 26px;
+/* Responsive cho điện thoại */
+@media (max-width: 991.98px) {
+    .navbar .nav-link {
+        padding: 10px 0;
     }
 
-    .navigation {
-        flex-direction: column;
-        align-items: stretch;
+    .navbar-nav {
+        padding-top: 10px;
     }
 
-    .navigation a {
-        text-align: center;
+    .hero {
+        padding: 65px 15px;
     }
 
-    .main-container {
-        flex-direction: column;
-        padding: 15px;
-    }
-
-    .content,
-    .sidebar {
-        width: 100%;
-    }
-
-    .content-cards {
-        flex-direction: column;
-    }
-
-    .card {
-        flex-basis: auto;
-    }
-}
-
-/* Điện thoại nhỏ */
-@media (max-width: 480px) {
-    .header {
-        padding: 20px 12px;
-    }
-
-    .header h1 {
-        font-size: 23px;
-    }
-
-    .header p {
-        font-size: 14px;
-    }
-
-    .main-container {
-        padding: 12px;
-        gap: 15px;
-    }
-
-    .card,
-    .sidebar {
-        padding: 15px;
-    }
-
-    .footer {
-        font-size: 13px;
+    .hero p {
+        font-size: 16px;
     }
 }
