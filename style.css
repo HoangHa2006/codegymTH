@@ -13,54 +13,68 @@ body {
 h1 {
     text-align: center;
     color: #174ea6;
+    margin-bottom: 35px;
 }
 
 h2 {
-    margin-top: 35px;
-    font-size: 20px;
+    margin-top: 30px;
+    color: #174ea6;
+}
+
+p {
+    color: #555;
 }
 
 .container {
     display: flex;
     gap: 10px;
-    width: 100%;
-    min-height: 100px;
     padding: 10px;
-    background-color: #dce6f1;
-    border: 2px solid #174ea6;
+    background-color: #e5e7eb;
+    border: 2px solid #9ca3af;
     border-radius: 8px;
 }
 
-.item {
-    flex-basis: 0;
-    flex-grow: 0;
-    min-width: 0;
-    padding: 20px 5px;
-    background-color: #4a90e2;
+.container > div {
+    flex: 0 0 100px;
+    min-height: 50px;
+    background-color: #007bff;
     color: white;
     text-align: center;
+    line-height: 50px;
     border-radius: 5px;
-    overflow-wrap: anywhere;
+    font-weight: bold;
 }
 
-/* Ví dụ 1: item thứ 2 chiếm phần không gian còn lại */
-.grow {
-    flex-grow: 1;
-    background-color: #e74c3c;
+/* Ví dụ 1: Một hàng, không xuống dòng */
+.row-nowrap {
+    flex-flow: row nowrap;
 }
 
-/* Ví dụ 2: so sánh tỷ lệ phát triển */
-.grow-1 {
-    flex-grow: 1;
-    background-color: #27ae60;
+/* Ví dụ 2: Đảo ngược thứ tự theo hàng */
+.row-reverse {
+    flex-flow: row-reverse nowrap;
 }
 
-.grow-2 {
-    flex-grow: 2;
-    background-color: #f39c12;
+.row-reverse > div {
+    background-color: #28a745;
 }
 
-.grow-3 {
-    flex-grow: 3;
+/* Ví dụ 3: Một hàng, được phép xuống dòng */
+.row-wrap {
+    flex-flow: row wrap;
+}
+
+.row-wrap > div {
+    background-color: #fd7e14;
+}
+
+/* Ví dụ 4: Xếp theo cột và cho phép wrap */
+.column-wrap {
+    flex-flow: column wrap;
+    height: 180px;
+    align-content: flex-start;
+}
+
+.column-wrap > div {
     background-color: #8e44ad;
 }
