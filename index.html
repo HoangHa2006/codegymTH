@@ -4,55 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Grid Layout</title>
+    <title>CSS Grid Responsive</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
+
         <header class="header">
-            <h1>Website CSS Grid</h1>
-            <p>Bố cục responsive với CSS Grid</p>
+            <h1>Website của tôi</h1>
+            <p>Thực hành CSS Grid Responsive</p>
         </header>
 
-        <nav class="sidebar">
-            <h2>Danh mục</h2>
-            <ul>
-                <li><a href="#home">Trang chủ</a></li>
-                <li><a href="#about">Giới thiệu</a></li>
-                <li><a href="#services">Dịch vụ</a></li>
-                <li><a href="#contact">Liên hệ</a></li>
-            </ul>
+        <nav class="navigation">
+            <a href="#home">Trang chủ</a>
+            <a href="#news">Tin tức</a>
+            <a href="#about">Giới thiệu</a>
+            <a href="#contact">Liên hệ</a>
         </nav>
 
-        <main class="content" id="home">
+        <main class="main-content" id="home">
             <h2>Nội dung chính</h2>
             <p>
-                Đây là khu vực nội dung chính của trang web.
-                CSS Grid giúp sắp xếp các thành phần rõ ràng
-                và dễ dàng thay đổi bố cục trên nhiều thiết bị.
+                CSS Grid là công cụ bố trí giao diện mạnh mẽ,
+                giúp chia trang web thành các hàng và cột.
             </p>
 
-            <div class="cards">
-                <article class="card">
-                    <h3>HTML</h3>
-                    <p>Dùng để xây dựng cấu trúc trang web.</p>
+            <div class="articles">
+                <article class="card" id="news">
+                    <h3>Bài viết 1</h3>
+                    <p>Tìm hiểu các kiến thức cơ bản về HTML.</p>
                 </article>
 
                 <article class="card">
-                    <h3>CSS</h3>
-                    <p>Dùng để định dạng giao diện trang web.</p>
+                    <h3>Bài viết 2</h3>
+                    <p>Sử dụng CSS để thiết kế giao diện đẹp.</p>
                 </article>
 
-                <article class="card">
-                    <h3>Responsive</h3>
-                    <p>Giúp trang web thích ứng với kích thước màn hình.</p>
+                <article class="card" id="about">
+                    <h3>Bài viết 3</h3>
+                    <p>Xây dựng website tương thích với nhiều thiết bị.</p>
                 </article>
             </div>
         </main>
 
-        <footer class="footer">
-            <p>© 2026 - Thực hành CSS Grid Layout</p>
+        <aside class="sidebar">
+            <h2>Tin tức bên lề</h2>
+            <p>Thông tin cập nhật mới nhất.</p>
+
+            <h3>Liên kết hữu ích</h3>
+            <ul>
+                <li><a href="https://developer.mozilla.org/">MDN Web Docs</a></li>
+                <li><a href="https://www.w3schools.com/">W3Schools</a></li>
+            </ul>
+        </aside>
+
+        <footer class="footer" id="contact">
+            <p>© 2026 - Thực hành CSS Grid Responsive</p>
         </footer>
+
     </div>
 </body>
 </html>
