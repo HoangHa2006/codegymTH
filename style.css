@@ -1,80 +1,187 @@
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: Arial, sans-serif;
-    margin: 30px;
-    background-color: #f4f6f9;
-    color: #222;
+    line-height: 1.6;
+    color: #333;
+    background-color: #eef2f7;
 }
 
-h1 {
-    text-align: center;
-    color: #174ea6;
-    margin-bottom: 35px;
-}
-
-h2 {
-    margin-top: 30px;
-    color: #174ea6;
-}
-
-p {
-    color: #555;
-}
-
+/* Toàn bộ bố cục */
 .container {
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #174ea6, #4285f4);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.header h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 5px;
+    background-color: #263746;
     padding: 10px;
-    background-color: #e5e7eb;
-    border: 2px solid #9ca3af;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.nav a:hover {
+    background-color: #4285f4;
+}
+
+/* Khu vực nội dung và sidebar */
+.main-container {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+    padding: 25px;
+    align-items: stretch;
+}
+
+/* Nội dung chính chiếm 3 phần */
+.content {
+    flex: 3;
+    min-width: 0;
+}
+
+.content h2,
+.sidebar h2 {
+    color: #174ea6;
+    margin-bottom: 15px;
+}
+
+.intro {
+    margin-bottom: 20px;
+}
+
+/* Các thẻ nội dung */
+.card {
+    padding: 20px;
+    margin-bottom: 15px;
+    background-color: #f8fafc;
+    border-left: 5px solid #4285f4;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.card h3 {
+    color: #263746;
+    margin-bottom: 8px;
+}
+
+/* Sidebar chiếm 1 phần */
+.sidebar {
+    flex: 1;
+    min-width: 0;
+    padding: 20px;
+    background-color: #f0f4f8;
     border-radius: 8px;
 }
 
-.container > div {
-    flex: 0 0 100px;
-    min-height: 50px;
-    background-color: #007bff;
-    color: white;
+.sidebar-box {
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: white;
+    border: 1px solid #dce3eb;
+    border-radius: 6px;
+}
+
+.sidebar-box h3 {
+    color: #174ea6;
+    margin-bottom: 5px;
+}
+
+/* Footer */
+.footer {
+    margin-top: auto;
+    padding: 20px;
     text-align: center;
-    line-height: 50px;
-    border-radius: 5px;
-    font-weight: bold;
+    background-color: #263746;
+    color: white;
 }
 
-/* Ví dụ 1: Một hàng, không xuống dòng */
-.row-nowrap {
-    flex-flow: row nowrap;
+/* Responsive: tablet và điện thoại */
+@media (max-width: 768px) {
+    .header {
+        padding: 25px 15px;
+    }
+
+    .header h1 {
+        font-size: 26px;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav a {
+        text-align: center;
+    }
+
+    .main-container {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .content,
+    .sidebar {
+        width: 100%;
+    }
+
+    .sidebar {
+        padding: 15px;
+    }
 }
 
-/* Ví dụ 2: Đảo ngược thứ tự theo hàng */
-.row-reverse {
-    flex-flow: row-reverse nowrap;
-}
+/* Điện thoại màn hình nhỏ */
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 23px;
+    }
 
-.row-reverse > div {
-    background-color: #28a745;
-}
+    .header p {
+        font-size: 14px;
+    }
 
-/* Ví dụ 3: Một hàng, được phép xuống dòng */
-.row-wrap {
-    flex-flow: row wrap;
-}
+    .main-container {
+        padding: 12px;
+    }
 
-.row-wrap > div {
-    background-color: #fd7e14;
-}
-
-/* Ví dụ 4: Xếp theo cột và cho phép wrap */
-.column-wrap {
-    flex-flow: column wrap;
-    height: 180px;
-    align-content: flex-start;
-}
-
-.column-wrap > div {
-    background-color: #8e44ad;
+    .card {
+        padding: 15px;
+    }
 }
